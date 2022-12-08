@@ -1,0 +1,17 @@
+{
+  "development": {
+    "username": "",
+    "password": "",
+    "database": ""
+  },
+  "test": {
+    "username": "",
+    "password": "",
+    "database": ""
+  },
+  "production": {
+    "username": "",
+    "password": "",
+    "database": ""
+  }
+}
