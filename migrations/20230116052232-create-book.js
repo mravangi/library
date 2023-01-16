@@ -9,6 +9,14 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER
       },
+      category: {
+        type: Sequelize.INTEGER(11),
+        allowNull: false,
+        references:{
+          model: "categories",
+          key: "id"
+        }
+    },
       title: {
         type: Sequelize.STRING
       },
@@ -26,9 +34,6 @@ module.exports = {
       },
       count: {
         type: Sequelize.INTEGER
-      },
-      eategory: {
-        type: Sequelize.STRING
       },
       createdAt: {
         allowNull: false,
