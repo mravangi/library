@@ -6,7 +6,7 @@ const cors = require("cors");
 const express = require('express');
 const routes = require('routes');
 const bodyParser = require('body-parser');
-const graphqlUploadExpress = require('graphql-upload/graphqlUploadExpress.js');
+// const graphqlUploadExpress = require('graphql-upload/graphqlUploadExpress.js');
 
   const app = express(); //4534
 
@@ -37,6 +37,6 @@ const graphqlUploadExpress = require('graphql-upload/graphqlUploadExpress.js');
   app.use('/', routes);
   app.get('/ip', (request, response) => response.send(request.ip))
   app.set('view engine', 'html');
-  app.use(graphqlUploadExpress());
+  // app.use(graphqlUploadExpress());
 
   module.exports = app;
