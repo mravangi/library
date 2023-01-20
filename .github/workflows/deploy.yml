@@ -1,17 +1,37 @@
-on: push
-name:  Deploy website on push
+name: CI-SFTP
+
+# Controls when the action will run. 
+on:
+  # Triggers the workflow on push or pull request events but only for the main branch
+  push:
+    branches: [ main ]
+#  pull_request:
+#    branches: [ main ]
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  web-deploy:
-    name:  Deploy
+  # This workflow contains a single job called "SFTP"
+  deploy-via-sftp:
     runs-on: ubuntu-latest
     steps:
-    - name:  Get latest code
-      uses: actions/checkout@v2.3.2
-    
-    - name:  Sync files
-      uses: SamKirkland/FTP-Deploy-Action@4.0.0
-      with:
-        server: ftp.noorminab.com
-        username: mohammadzakeri322@noorminab.com
-        password: ${{ secrets.ftp_password }}
-        server-dir: /library-backend/
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v2
+          
+      - name: SFTP Deploy
+        uses: wlixcc/SFTP-Deploy-Action@v1.2.1
+        with:
+          server: ftp.noorminab.com
+          username: mohammadzakeri322@noorminab.com
+          password: ${{ secrets.ftp_password }} 
+
+          
+          # will put all file under this path
+          local_path: ./* # default is ./*
+          # files will copy to under remote_path
+          remote_path: /var/www
+          
+          # sftp args
+          args: '-o ConnectTimeout=5'
