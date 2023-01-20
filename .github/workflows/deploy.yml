@@ -23,9 +23,10 @@ jobs:
       - name: SFTP Deploy
         uses: wlixcc/SFTP-Deploy-Action@v1.2.1
         with:
-          server: ftp.noorminab.com
-          username: mohammadzakeri322@noorminab.com
-          password: ${{ secrets.ftp_password }} 
+          username: mohammadzakeri322@gmail.com
+          server: noorminab.com
+          port: 22 # default is 22
+          ssh_private_key: ${{ secrets.SSH_PRIVATE_KEY }}
 
           
           # will put all file under this path
