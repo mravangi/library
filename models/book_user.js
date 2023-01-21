@@ -33,7 +33,7 @@ module.exports = (sequelize, DataTypes) => {
     status: DataTypes.ENUM('reserve', 'taken', 'available')
   }, {
     sequelize,
-    modelName: 'book-user',
+    modelName: 'book_user',
   });
   return book - user;
 };
