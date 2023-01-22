@@ -3,8 +3,6 @@ module.exports = `
         test: Test!
     }
 
-    }
-
     type Test {
         key : String
     }
