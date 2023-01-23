@@ -1,7 +1,7 @@
 const request = require('request');
 
 
-function send() {
+function send(number, otpCode) {
     request.post({
         url: 'http://ippanel.com/api/select',
         body: {
@@ -9,10 +9,10 @@ function send() {
         "user": process.env.SMS_USER,
         "pass":process.env.SMS_PASS,
         "fromNum": process.env.SMS_NUMBER,
-        "toNum":"09171666549",
+        "toNum": number,
         "patternCode":process.env.OTP,
         "inputData":[
-            {"amount":3000}	
+            {"code":otpCode}	
         ]
     },
         json: true,
