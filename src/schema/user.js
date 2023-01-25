@@ -4,10 +4,12 @@ module.exports = `
     }
 
     type Mutation {
-        getMobileNumber(mobile: String!): MobileVerificationRespone
+        getMobileNumber(mobile: String!): Responde
+        getOtp(mobile: String!, code:String!): Responde
     }
 
-    type MobileVerificationRespone {
+
+    type Responde {
         text: String
     }
 `;

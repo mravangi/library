@@ -37,6 +37,31 @@ module.exports = {
            }
 
 
+        },
+
+        getOtp: async (parent, args, context) => {
+            const verification = await models.verification.findOne({
+                where: {
+                    mobile: args.mobile
+                },
+                order: [['id', 'DESC']] //ascend
+            })
+
+            if (verification){
+                if(verification.code == args.code) {
+                    return {
+                        text: "corect!"
+                    }
+                }else {
+                    return {
+                        text: "try again!"
+                    }
+                }
+            } else {
+                return {
+                    text: "ops!"
+                }
+            }
         }
     }
 };
