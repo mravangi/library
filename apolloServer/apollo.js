@@ -65,7 +65,13 @@ const clientsApollo = new ApolloServer({
   formatError: 
   (error) => {
     //const errId = v4();
-    return new GraphQLError(`${error}`);
+    return new GraphQLError(`${error.message}`, {
+      path: error.path,
+      extensions: {
+          code: error.extensions.code,
+          argumentName: error.extensions.argumentName,
+      },
+    });
   }
 });
 
