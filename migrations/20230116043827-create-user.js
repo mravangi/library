@@ -10,12 +10,7 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       role: {
-          type: Sequelize.INTEGER(11),
-          allowNull: false,
-          references:{
-            model: "roles",
-            key: "id"
-          }
+        type: Sequelize.ENUM('client', 'admin')
       },
       firstName: {
         type: Sequelize.STRING
@@ -32,7 +27,7 @@ module.exports = {
       nationalCode: {
         type: Sequelize.STRING
       },
-      password: {
+      token: {
         type: Sequelize.STRING
       },
       createdAt: {

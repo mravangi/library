@@ -14,20 +14,13 @@ module.exports = (sequelize, DataTypes) => {
     }
   }
   user.init({
-    role: {
-      type: DataTypes.INTEGER(11),
-      allowNull:false,
-      references:{
-        model: "roles",
-        key: "id"
-      }
-    },
+    role: DataTypes.ENUM('client', 'admin'),
     firstName: DataTypes.STRING,
     lastName: DataTypes.STRING,
     gender: DataTypes.ENUM('male', 'female'),
     mobile: DataTypes.STRING,
     nationalCode: DataTypes.STRING,
-    password: DataTypes.STRING
+    token: DataTypes.STRING
   }, {
     sequelize,
     modelName: 'user',
