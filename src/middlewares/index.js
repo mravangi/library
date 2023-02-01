@@ -32,5 +32,6 @@ module.exports = {
     formatErrors: require('./formatErrors'),
     throwError: require('./throwError'),
     isValidTime: require('./isValidTime'),
-    spaceTodash: require('./spaceTodash')
+    spaceTodash: require('./spaceTodash'),
+    response: require('./response')
   };
