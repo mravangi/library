@@ -1,12 +1,14 @@
 const models = require('../../models');
+const middlewares = require('../../src/middlewares');
+const sms = require('../../utils/sms');
 
 module.exports = async (ctx) => {
     const { req } = ctx;
-    const SECRET = "CLIENTSECRET";
-
-    let check = await models.Client.checkToken(req, models, SECRET);
-                                     
+                   
     return {
-        check
+        models,
+        middlewares,
+        req,
+        sms
     };
 }
