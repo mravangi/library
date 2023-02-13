@@ -1,7 +1,7 @@
 module.exports = `
 
     type Mutation {
-        SetCategory(input: InputCategory): SetCategoryResponde
+        SetCategory(input: InputCategory!): SetCategoryResponde
     }
 
     type SetCategoryResponde {
