@@ -1,4 +1,8 @@
 module.exports = `
+type Query {
+    test: String!
+    GetBooks:GetBooksResponde! 
+}
 
     type Mutation {
         AddBook(input:InputAddBook!) :  AddBookResponde
@@ -11,10 +15,22 @@ module.exports = `
         result:AddBookResult  
     }
 
+    type GetBooksResponde{
+        req: Req
+        res: Res
+        result:GetBooksResult  
+    }
+
     type AddBookResult{
         ok:Boolean
         book:Book
     }
+
+    type GetBooksResult {
+        ok:Boolean
+        books:[Book]
+    }
+
 
     type Book {
         id:Int
