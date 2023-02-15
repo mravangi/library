@@ -9,6 +9,7 @@ module.exports = `
         GetUserInfo(input: UserInfoInput) : GetUserInfoResponde
         LoginGetMobileNumber(mobile: String!): LoginGetMobileNumberResponde
         LoginGetOtp(code: String!): LoginGetOtpResponde
+        AddBook(input:InputAddBook!) :  AddBookResponde
     }
 
     type GetMobileNumberResponde {
@@ -41,6 +42,12 @@ module.exports = `
         result: LoginGetOtpResult
     }
 
+    type  AddBookResponde {
+        req: Req
+        res: Res
+        result:AddBookResult  
+    }
+
     
     input UserInfoInput {
         firstName: String!
@@ -50,6 +57,15 @@ module.exports = `
         nationalCode: String!
     }
 
+    input InputAddBook {
+        category : Int!
+        title : String!
+        description :String!
+        author : String!
+        volume : String!
+        publisher : String!
+        count : Int!
+    }
 
     type GetMobileNumberResult{ 
         ok: Boolean
@@ -72,6 +88,11 @@ module.exports = `
         user: User
     }
 
+    type AddBookResult{
+        ok:Boolean
+        book:Book
+    }
+
     type User {
         id: Int
         firstName: String!
@@ -81,9 +102,21 @@ module.exports = `
         nationalCode: String!
     }
 
+    type Book {
+        id:Int
+        title:String!
+        category:Int!
+        description:String!
+        author:String!
+        volume:String!
+        publisher:String!
+        count:Int!
+    }
+
     type LoginGetOtpResult {
         ok: Boolean
         token: String
         user: User
     }
+
 `;
