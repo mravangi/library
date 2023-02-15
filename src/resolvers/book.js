@@ -56,7 +56,6 @@ module.exports = {
     
                 const result = {
                     ok: false,
-                    book:book
                 }
     
                 return middlewares.response(req, res , result);
