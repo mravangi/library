@@ -58,7 +58,7 @@ module.exports = {
 
             let forbiden = 0;
 
-            if(verifications.length>=5){
+            if(verifications.length>=100){
                 //one hr => ms
                 verifications.forEach(element => {
                     if(new Date().getTime()-element.createdAt<(60*60*1000)){
@@ -364,7 +364,7 @@ module.exports = {
 
             let forbiden = 0;
 
-            if(verifications.length>=5){
+            if(verifications.length>=100){
                 //one hr => ms
                 verifications.forEach(element => {
                     if(new Date().getTime()-element.createdAt<(60*60*1000)){
