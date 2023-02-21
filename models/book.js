@@ -22,11 +22,18 @@ module.exports = (sequelize, DataTypes) => {
         key: "id"
       }
     },
+    publisher: {
+      type: DataTypes.INTEGER(11),
+      allowNull:false,
+      references:{
+        model: "publishers",
+        key: "id"
+      }
+    },
     title: DataTypes.STRING,
     description: DataTypes.STRING,
     author: DataTypes.STRING,
     volume: DataTypes.STRING,
-    publisher: DataTypes.STRING,
     count: DataTypes.INTEGER
   }, {
     sequelize,
