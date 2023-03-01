@@ -1,5 +1,8 @@
 module.exports = `
-
+   type Query {
+       test: String!
+       GetCategories: GetCategoriesResponde!
+    }
     type Mutation {
         SetCategory(input: InputCategory!): SetCategoryResponde
     }
@@ -9,10 +12,22 @@ module.exports = `
         res: Res
         result: SetCategoryResult
     }
+    
+
+    type GetCategoriesResponde {
+        req: Req
+        res: Res
+        result:GetCategoriesResult
+    }
 
     type SetCategoryResult {
         ok: Boolean!
         category: Category
+    }
+
+    type GetCategoriesResult {
+        ok: Boolean!
+        categories: [Category]
     }
 
     type Category {
@@ -25,6 +40,12 @@ module.exports = `
         title: String!
         status: Status!
     }
+
+    input InputGetCategories {
+        title: String!
+        status: Status!
+    }
+    
 
     enum Status {
         active

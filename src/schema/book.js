@@ -6,6 +6,7 @@ type Query {
 
     type Mutation {
         AddBook(input:InputAddBook!) :  AddBookResponde
+        
     }
 
 
@@ -43,4 +44,13 @@ type Query {
         count:Int!
     }
 
+    input InputAddBook {
+        category : Int!
+        title : String!
+        description :String!
+        author : String!
+        volume : String!
+        publisher : String!
+        count : Int!
+    }
 `;
