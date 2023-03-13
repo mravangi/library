@@ -5,7 +5,7 @@ type Query {
 }
 
     type Mutation {
-        AddBook(input:InputAddBook!) :  AddBookResponde
+        AddBook(input:InputAddBook!) :  AddBookResponde!
         
     }
 

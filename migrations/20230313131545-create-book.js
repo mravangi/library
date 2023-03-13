@@ -17,6 +17,7 @@ module.exports = {
           key: "id"
         }
     },
+    
       title: {
         type: Sequelize.STRING
       },
@@ -24,14 +25,24 @@ module.exports = {
         type: Sequelize.STRING
       },
       author: {
-        type: Sequelize.STRING
-      },
+        type: Sequelize.INTEGER(11),
+        allowNull: false,
+        references:{
+          model: "authors",
+          key: "id"
+        }
+    },
       volume: {
         type: Sequelize.STRING
       },
-      publisher: {
-        type: Sequelize.STRING
-      },
+      publisher:  {
+        type: Sequelize.INTEGER(11),
+        allowNull: false,
+        references:{
+          model: "publishers",
+          key: "id"
+        }
+    },
       count: {
         type: Sequelize.INTEGER
       },

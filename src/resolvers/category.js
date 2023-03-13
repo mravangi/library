@@ -1,6 +1,65 @@
 
 module.exports = {
+  Query: {
+        GetCategories: async (parent, args, context) => {
+            const { models, middlewares, user } = context;
+            if(!user) {
 
+                const req = {
+                    code: 401,
+                    message: "Unathorized"
+                }
+
+                const res = {
+                    code: false,
+                    message: "کاربر لاگین نکرده است"
+                }
+
+                return middlewares.response(req, res, {ok:false});
+            }
+            try {
+
+                const castegory = await models.castegory.findAll({
+                    where:{}
+                })
+    
+                const req = {
+                    code : 200,
+                    message : "sucess"
+                };
+    
+                const res = {
+                    code : true,
+                    message: "sucess"
+                }
+    
+                const result = {
+                    ok: true,
+                    category:castegory
+                }
+    
+                return middlewares.response(req, res , result);
+                
+            } catch (error) {
+                const req = {
+                    code : 500,
+                    message : "Server error"
+                };
+    
+                const res = {
+                    code : false,
+                    message: "خطایی رخ داده است"
+                }
+    
+                const result = {
+                    ok: false,
+                }
+    
+                return middlewares.response(req, res , result);
+                
+            }
+        }
+    },
     Mutation: {
         SetCategory: async (parent, args, context) => {
             const { models, middlewares, user } = context;

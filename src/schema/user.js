@@ -119,4 +119,9 @@ module.exports = `
         user: User
     }
 
+    enum Gender{
+        female
+        male
+    }
+
 `;

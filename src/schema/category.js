@@ -41,10 +41,7 @@ module.exports = `
         status: Status!
     }
 
-    input InputGetCategories {
-        title: String!
-        status: Status!
-    }
+
     
 
     enum Status {
