@@ -14,6 +14,12 @@ module.exports = {
       },
       image: {
         type: Sequelize.STRING
+      }, 
+      imail: {
+        type: Sequelize.STRING
+      },
+      mobile: {
+        type: Sequelize.STRING
       },
       createdAt: {
         allowNull: false,

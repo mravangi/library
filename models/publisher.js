@@ -15,7 +15,9 @@ module.exports = (sequelize, DataTypes) => {
   }
   publisher.init({
     title: DataTypes.STRING,
-    image: DataTypes.STRING
+    image: DataTypes.STRING,
+    imail:DataTypes.STRING,
+    mobile:DataTypes.STRING
   }, {
     sequelize,
     modelName: 'publisher',

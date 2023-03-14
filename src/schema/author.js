@@ -27,12 +27,12 @@ type Query {
         id:Int
         firstName:String!
         lastName:String!
-        mobilNumber:String!
+        mobileNumber:String!
     }
 
     input InputAddAuthor {
        firstName:String!
        lastName:String!
-       mobilNumber:String!
+       mobileNumber:String!
     }
 `;

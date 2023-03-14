@@ -15,7 +15,7 @@ module.exports = {
       lastName: {
         type: Sequelize.STRING
       },
-      mobilnumber: {
+      mobilenumber: {
         type: Sequelize.STRING
       },
       createdAt: {
